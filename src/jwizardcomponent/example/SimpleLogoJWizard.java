@@ -6,7 +6,7 @@ import javax.swing.JLabel;
 import javax.swing.SwingUtilities;
 import javax.swing.UIManager;
 
-import jwizardcomponent.JWizardComponents;
+import jwizardcomponent.DefaultJWizardComponents;
 import jwizardcomponent.Utilities;
 import jwizardcomponent.frame.SimpleJWizardFrame;
 import jwizardcomponent.frame.SimpleLogoJWizardFrame;
@@ -42,7 +42,7 @@ public class SimpleLogoJWizard extends SimpleJWizardFrame {
     try {
 
         LOGO =
-            new ImageIcon(JWizardComponents.class.getResource("images/logo.jpeg"));
+            new ImageIcon(DefaultJWizardComponents.class.getResource("images/logo.jpeg"));
 
       SimpleLogoJWizardFrame wizardFrame = new SimpleLogoJWizardFrame(
           LOGO);

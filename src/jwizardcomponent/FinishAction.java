@@ -26,9 +26,9 @@ package jwizardcomponent;
 
 public abstract class FinishAction implements Action {
 
-  JWizardComponents wizardComponents;
+  DefaultJWizardComponents wizardComponents;
 
-  public FinishAction(JWizardComponents wizardComponents) {
+  public FinishAction(DefaultJWizardComponents wizardComponents) {
     this.wizardComponents = wizardComponents;
   }
 

@@ -11,7 +11,7 @@ import javax.swing.JSeparator;
 
 import jwizardcomponent.CancelAction;
 import jwizardcomponent.FinishAction;
-import jwizardcomponent.JWizardComponents;
+import jwizardcomponent.DefaultJWizardComponents;
 
 /**
  * <p>Title: JWizardComponent</p>
@@ -38,18 +38,21 @@ import jwizardcomponent.JWizardComponents;
 
 public class SimpleJWizardFrame extends JFrame {
 
-  JWizardComponents wizardComponents;
+  DefaultJWizardComponents wizardComponents;
 
   JPanel buttonPanel;
   JLabel statusLabel = new JLabel();
   JPanel bottomPanel = new JPanel();
 
   public SimpleJWizardFrame() {
-    wizardComponents = new JWizardComponents();
+    wizardComponents = new DefaultJWizardComponents();
     init();
   }
 
   private void init() {
+  	
+	  	
+  	
     this.getContentPane().setLayout(new GridBagLayout());
     this.getContentPane().add(wizardComponents.getWizardPanelsContainer(),
                               new GridBagConstraints(0, 0, 1, 1, 1.0, 0.9
@@ -80,11 +83,11 @@ public class SimpleJWizardFrame extends JFrame {
 
   }
 
-  public JWizardComponents getWizardComponents(){
+  public DefaultJWizardComponents getWizardComponents(){
     return wizardComponents;
   }
 
-  public void setWizardComponents(JWizardComponents aWizardComponents){
+  public void setWizardComponents(DefaultJWizardComponents aWizardComponents){
     wizardComponents = aWizardComponents;
   }
 

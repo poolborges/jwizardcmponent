@@ -73,7 +73,7 @@ public class SimpleDynamicWizardPanel extends WizardPanel {
                          getWizardComponents().getWizardPanelList().contains(screen5Panel)) {
               getWizardComponents().removeWizardPanel(screen5Panel);
           }
-        } else {
+        } else { //ItemEvent.SELECTED
           if (source.equals(screen3CheckBox) &&
               !getWizardComponents().getWizardPanelList().contains(screen3Panel)) {
 
@@ -102,12 +102,12 @@ public class SimpleDynamicWizardPanel extends WizardPanel {
                      !getWizardComponents().getWizardPanelList().contains(screen5Panel)) {
 
             int index;
-            if (getWizardComponents().getWizardPanelList().contains(screen3Panel)) {
+			if (getWizardComponents().getWizardPanelList().contains(screen4Panel)) {
+						  index =
+							  getWizardComponents().getWizardPanelList().indexOf(screen4Panel)+1;
+			} else if (getWizardComponents().getWizardPanelList().contains(screen3Panel)) {
               index =
                   getWizardComponents().getWizardPanelList().indexOf(screen3Panel)+1;
-            } else if (getWizardComponents().getWizardPanelList().contains(screen4Panel)) {
-              index =
-                  getWizardComponents().getWizardPanelList().indexOf(screen4Panel)+1;
             } else {
               index = getWizardComponents().getCurrentIndex()+1;
             }

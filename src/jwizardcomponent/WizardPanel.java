@@ -34,15 +34,16 @@ public abstract class WizardPanel extends JPanel {
   }
 
   public void next() {
-    if (wizardComponents.panelList.size() > wizardComponents.currentIndex+1 ) {
-      wizardComponents.currentIndex++;
+    if (wizardComponents.getWizardPanelList().size() 
+    		> wizardComponents.getCurrentIndex()+1 ) {
+      wizardComponents.setCurrentIndex(wizardComponents.getCurrentIndex()+1);
       wizardComponents.updateComponents();
     } 
   }
 
   public void back() {
-    if (wizardComponents.currentIndex-1 >= 0) {
-      wizardComponents.currentIndex--;
+    if (wizardComponents.getCurrentIndex()-1 >= 0) {
+      wizardComponents.setCurrentIndex(wizardComponents.getCurrentIndex()-1);
       wizardComponents.updateComponents();
     }
   }

@@ -1,6 +1,6 @@
 package jwizardcomponent;
 
-import java.util.ArrayList;
+import java.util.List;
 
 /**
  * <p>Title: JWizardComponent</p>
@@ -27,9 +27,9 @@ import java.util.ArrayList;
 
 public interface JWizard {
 
-  public ArrayList getWizardPanelList();
+  public List getWizardPanelList();
 
-  public void setWizardPanelList(ArrayList panelList);
+  public void setWizardPanelList(List panelList);
 
   public void addWizardPanel(WizardPanel panel);
 

@@ -14,7 +14,7 @@ import javax.swing.JSeparator;
 
 import jwizardcomponent.CancelAction;
 import jwizardcomponent.FinishAction;
-import jwizardcomponent.JWizardComponents;
+import jwizardcomponent.DefaultJWizardComponents;
 
 /**
  * <p>Title: JWizardComponent</p>
@@ -41,7 +41,7 @@ import jwizardcomponent.JWizardComponents;
 
 public class SimpleLogoJWizardFrame extends JFrame {
 
-  JWizardComponents wizardComponents;
+  DefaultJWizardComponents wizardComponents;
 
   JPanel buttonPanel;
   JLabel statusLabel = new JLabel();
@@ -50,7 +50,7 @@ public class SimpleLogoJWizardFrame extends JFrame {
 
   public SimpleLogoJWizardFrame(ImageIcon logo) {
     this.logo = logo;
-    wizardComponents = new JWizardComponents();
+    wizardComponents = new DefaultJWizardComponents();
     init();
   }
 
@@ -103,11 +103,11 @@ public class SimpleLogoJWizardFrame extends JFrame {
     });
   }
 
-  public JWizardComponents getWizardComponents(){
+  public DefaultJWizardComponents getWizardComponents(){
     return wizardComponents;
   }
 
-  public void setWizardComponents(JWizardComponents aWizardComponents){
+  public void setWizardComponents(DefaultJWizardComponents aWizardComponents){
     wizardComponents = aWizardComponents;
   }
 
