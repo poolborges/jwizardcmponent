@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<library>
+  <!--JBuilder JDK Definition File-->
+  <fullname>java 1.4.2-beta-b19</fullname>
+  <homepath>../../../../../j2sdk1.4.2</homepath>
+  <debug/>
+  <class>
+    <path>[../../../../../j2sdk1.4.2/demo/jfc/Java2D/Java2Demo.jar]</path>
+    <path>[../../../../../j2sdk1.4.2/demo/plugin/jfc/Java2D/Java2Demo.jar]</path>
+    <path>[../../../../../j2sdk1.4.2/jre/javaws/javaws.jar]</path>
+    <path>[../../../../../j2sdk1.4.2/jre/lib/charsets.jar]</path>
+    <path>[../../../../../j2sdk1.4.2/jre/lib/ext/dnsns.jar]</path>
+    <path>[../../../../../j2sdk1.4.2/jre/lib/ext/ldapsec.jar]</path>
+    <path>[../../../../../j2sdk1.4.2/jre/lib/ext/localedata.jar]</path>
+    <path>[../../../../../j2sdk1.4.2/jre/lib/ext/sunjce_provider.jar]</path>
+    <path>[../../../../../j2sdk1.4.2/jre/lib/im/indicim.jar]</path>
+    <path>[../../../../../j2sdk1.4.2/jre/lib/im/thaiim.jar]</path>
+    <path>[../../../../../j2sdk1.4.2/jre/lib/jce.jar]</path>
+    <path>[../../../../../j2sdk1.4.2/jre/lib/jsse.jar]</path>
+    <path>[../../../../../j2sdk1.4.2/jre/lib/plugin.jar]</path>
+    <path>[../../../../../j2sdk1.4.2/jre/lib/rt.jar]</path>
+    <path>[../../../../../j2sdk1.4.2/jre/lib/sunrsasign.jar]</path>
+    <path>[../../../../../j2sdk1.4.2/lib/dt.jar]</path>
+    <path>[../../../../../j2sdk1.4.2/lib/htmlconverter.jar]</path>
+    <path>[../../../../../j2sdk1.4.2/lib/tools.jar]</path>
+  </class>
+  <source>
+    <path>../../../../../j2sdk1.4.2/demo/jfc/Java2D/src</path>
+    <path>[../../../../../j2sdk1.4.2/demo/jpda/examples.jar]</path>
+    <path>../../../../../j2sdk1.4.2/demo/plugin/jfc/Java2D/src</path>
+    <path>[../../../../../j2sdk1.4.2/src.zip]</path>
+  </source>
+  <documentation>
+    <path>[../../../../../JBuilder7/doc/jdk13_docs.jar]/java/api</path>
+  </documentation>
+  <lastmodsaved>1055211694609</lastmodsaved>
+</library>

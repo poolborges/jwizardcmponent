@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--JBuilder XML Project-->
+<project>
+  <property category="com.gillmerderge.jbuilder.wizard.javadoc.DocletOptions" name="documentEncoding" value="ISO-8859-1"/>
+  <property category="com.gillmerderge.jbuilder.wizard.javadoc.JavadocOptions" name="encoding" value="ISO-8859-1"/>
+  <property category="com.gillmerderge.jbuilder.wizard.javadoc.standard.StandardDocletOptions" name="bottom" value=""/>
+  <property category="com.gillmerderge.jbuilder.wizard.javadoc.standard.StandardDocletOptions" name="footer" value=""/>
+  <property category="com.gillmerderge.jbuilder.wizard.javadoc.standard.StandardDocletOptions" name="header" value=""/>
+  <property category="idl" name="ProcessIDL" value="false"/>
+  <property category="runtime" name="DefaultConfiguration" value="-1"/>
+  <property category="runtime" name="ExcludeDefaultForZero" value="1"/>
+  <property category="serverservices" name="single.server.name" value="Tomcat 4.0"/>
+  <property category="sys" name="AuthorLabel" value="@author"/>
+  <property category="sys" name="BackupPath" value="bak"/>
+  <property category="sys" name="CheckStable" value="1"/>
+  <property category="sys" name="Company" value=""/>
+  <property category="sys" name="CompanyLabel" value="Company:"/>
+  <property category="sys" name="Copyright" value="Copyright (c) 2003"/>
+  <property category="sys" name="CopyrightLabel" value="Copyright:"/>
+  <property category="sys" name="DefaultPath" value="src"/>
+  <property category="sys" name="Description" value="Swing-Based Wizard Framework for Wizards"/>
+  <property category="sys" name="DescriptionLabel" value="Description:"/>
+  <property category="sys" name="DocPath" value="doc"/>
+  <property category="sys" name="ExcludeClassEnabled" value="0"/>
+  <property category="sys" name="IncludeTestPath" value="1"/>
+  <property category="sys" name="InstanceVisibility" value="2"/>
+  <property category="sys" name="JDK" value="java 1.4.2-beta-b19"/>
+  <property category="sys" name="LastTag" value="0"/>
+  <property category="sys" name="Libraries" value=""/>
+  <property category="sys" name="MakeStable" value="0"/>
+  <property category="sys" name="OutPath" value="classes"/>
+  <property category="sys" name="SourcePath" value="src;test;images"/>
+  <property category="sys" name="TestPath" value="test"/>
+  <property category="sys" name="Title" value="JWizardComponent"/>
+  <property category="sys" name="TitleLabel" value="Title:"/>
+  <property category="sys" name="Version" value="0.9"/>
+  <property category="sys" name="VersionLabel" value="@version"/>
+  <property category="sys" name="WorkingDirectory" value="."/>
+  <property category="sys" name="javadoc.author" value="1"/>
+  <property category="sys" name="javadoc.deprectated" value="1"/>
+  <property category="sys" name="javadoc.deprectatedlist" value="1"/>
+  <property category="sys" name="javadoc.exclude" value=""/>
+  <property category="sys" name="javadoc.index" value="1"/>
+  <property category="sys" name="javadoc.jdk11format" value="0"/>
+  <property category="sys" name="javadoc.navbar" value="1"/>
+  <property category="sys" name="javadoc.outdir" value="C:\cygwin\home\tweak\keck_folder\JWizardComponent\doc"/>
+  <property category="sys" name="javadoc.packages" value="jwizardcomponent"/>
+  <property category="sys" name="javadoc.quotepaths" value="0"/>
+  <property category="sys" name="javadoc.scope" value="protected"/>
+  <property category="sys" name="javadoc.splitindex" value="0"/>
+  <property category="sys" name="javadoc.tree" value="1"/>
+  <property category="sys" name="javadoc.use" value="0"/>
+  <property category="sys" name="javadoc.version" value="1"/>
+  <node name="Archive" type="Archive">
+    <property category="archiving" name="buildWithProject" value="0"/>
+    <property category="archiving" name="contentRules.1" value="I:**/*.*"/>
+    <property category="archiving" name="contentRules.2" value="F:images/logo.jpeg;jwizardcomponent/images/logo.jpeg"/>
+    <property category="archiving" name="extraDeployRoots.1" value="F:logo.jpeg"/>
+    <property category="archiving" name="targetCompressed" value="1"/>
+    <property category="archiving" name="targetPath" value="JWizardComponent.jar"/>
+    <property category="archiving" name="usingRules" value="1"/>
+  </node>
+  <file path="src/jwizardcomponent/Action.java"/>
+  <file path="build.xml">
+    <property category="ant" name="usebmj" value="0"/>
+  </file>
+  <file path="src/jwizardcomponent/CancelAction.java"/>
+  <file path="src/jwizardcomponent/FinishAction.java"/>
+  <file path="src/jwizardcomponent/JWizard.java"/>
+  <file path="src/jwizardcomponent/JWizardComponents.java"/>
+  <file path="images/logo.jpeg"/>
+  <file path="src/jwizardcomponent/example/SimpleLogoJWizard.java"/>
+  <file path="src/jwizardcomponent/Utilities.java"/>
+  <file path="src/jwizardcomponent/WizardPanel.java"/>
+</project>
