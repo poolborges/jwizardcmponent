@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<jnlp
+  spec="1.0+"
+  codebase="http://willready.isa-geek.net:8080/JWizardComponent"
+  href="JWizardComponent.jnlp">
+  <information>
+    <title>JWizardComponent Demo Application</title>
+    <vendor>Ready Technologies, Inc.</vendor>
+    <homepage href="http://jwizardcmponent.sourceforge.net/"/>
+    <description>JWizardComponent Demo Application</description>
+    <description kind="short">
+    	A demo of the capabilities of the JWizardComponent.
+    </description>
+    <icon href="images/logo.jpeg"/>
+    <icon kind="splash" href="images/logo.jpeg"/>
+    <offline-allowed/>
+  </information>
+  <!--
+	  <security>
+    	  <all-permissions/>
+	  </security>
+  -->
+  <resources>
+    <j2se version="1.4+"/>
+    <jar href="http://willready.isa-geek.net:8080/JWizardComponent/JWizardComponent.jar"/>
+  </resources>
+  <application-desc main-class="jwizardcomponent.example.SimpleDynamicLogoJWizard"/>
+</jnlp>
