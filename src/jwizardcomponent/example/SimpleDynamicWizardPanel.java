@@ -79,8 +79,7 @@ public class SimpleDynamicWizardPanel extends WizardPanel {
 
             screen3Panel = new SimpleLabelWizardPanel(getWizardComponents(),
                 new JLabel("Screen 3"));
-            getWizardComponents().addWizardPanel(
-                getWizardComponents().getCurrentIndex()+1,
+            getWizardComponents().addWizardPanelAfterCurrent(
                 screen3Panel);
 
           } else if (source.equals(screen4CheckBox) &&
