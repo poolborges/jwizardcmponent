@@ -49,7 +49,7 @@ public class SimpleDynamicLogoJWizard {
 
       UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
       SwingUtilities.updateComponentTreeUI(wizardFrame);
-
+      
       wizardFrame.setTitle("Simple Logo Dynamic JWizardComponent");
 
       wizardFrame.getWizardComponents().addWizardPanel(

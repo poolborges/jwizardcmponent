@@ -39,8 +39,8 @@ import javax.swing.JPanel;
 
 public class DefaultJWizardComponents implements JWizardComponents {
     
-        private static final java.util.ResourceBundle i18n =
-                java.util.ResourceBundle.getBundle("jwizardcomponent/i18n");
+    private java.util.ResourceBundle resourceBundle =
+            java.util.ResourceBundle.getBundle("jwizardcomponent/i18n");
        
 	JButton backButton;
 	JButton nextButton;
@@ -163,32 +163,32 @@ public class DefaultJWizardComponents implements JWizardComponents {
 		currentIndex = 0;
 		wizardPanelsContainer = new JPanel();
 
-		backButton.setText(i18n.getString("L_BackButton"));
-		backButton.setMnemonic(i18n.getString("L_BackButtonMnem").charAt(0)); 
+		backButton.setText(resourceBundle.getString("L_BackButton"));
+		backButton.setMnemonic(resourceBundle.getString("L_BackButtonMnem").charAt(0)); 
 		backButton.addActionListener(new java.awt.event.ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				backButton_actionPerformed(e);
 			}
 		});
 
-		nextButton.setText(i18n.getString("L_NextButton"));
-		nextButton.setMnemonic(i18n.getString("L_NextButtonMnem").charAt(0));
+		nextButton.setText(resourceBundle.getString("L_NextButton"));
+		nextButton.setMnemonic(resourceBundle.getString("L_NextButtonMnem").charAt(0));
                 nextButton.addActionListener(new java.awt.event.ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				nextButton_actionPerformed(e);
 			}
 		});
 
-		cancelButton.setText(i18n.getString("L_CancelButton"));
-		cancelButton.setMnemonic(i18n.getString("L_CancelButtonMnem").charAt(0));
+		cancelButton.setText(resourceBundle.getString("L_CancelButton"));
+		cancelButton.setMnemonic(resourceBundle.getString("L_CancelButtonMnem").charAt(0));
                 cancelButton.addActionListener(new java.awt.event.ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				cancelButton_actionPerformed(e);
 			}
 		});
 
-		finishButton.setText(i18n.getString("L_FinishButton"));
-		finishButton.setMnemonic(i18n.getString("L_FinishButtonMnem").charAt(0));
+		finishButton.setText(resourceBundle.getString("L_FinishButton"));
+		finishButton.setMnemonic(resourceBundle.getString("L_FinishButtonMnem").charAt(0));
                 finishButton.addActionListener(new java.awt.event.ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				finishButton_actionPerformed(e);
@@ -346,4 +346,19 @@ public class DefaultJWizardComponents implements JWizardComponents {
             propertyChangeListeners.removePropertyChangeListener(listener);
         }
         
+		/**
+		 * @return Returns the resourceBundle.
+		 */
+		public java.util.ResourceBundle getResourceBundle() {
+			return resourceBundle;
+		}
+
+		/**
+		 * @param resourceBundle The resourceBundle to set.
+		 */
+		public void setResourceBundle(
+			java.util.ResourceBundle resourceBundle) {
+			this.resourceBundle = resourceBundle;
+		}
+
 }
