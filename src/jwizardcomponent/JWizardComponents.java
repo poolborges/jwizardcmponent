@@ -7,6 +7,7 @@
 package jwizardcomponent;
 
 import java.util.List;
+import java.beans.PropertyChangeListener;
 
 import javax.swing.JButton;
 import javax.swing.JPanel;
@@ -32,39 +33,41 @@ import javax.swing.JPanel;
  * <br>59 Temple Place, Suite 330 
  * <br>Boston, MA 02111-1307 USA</p>
  * @author William Ready
- * @version 0.9
+ * @version 1.1
+ * 
+ * Property Change Listening implemented by Piotr Kamiñski.
  */
 public interface JWizardComponents extends JWizard {
 
-	public void addWizardPanel(WizardPanel panel);
+	public void addWizardPanel(JWizardPanel panel);
 	
-	public void addWizardPanel(int index, WizardPanel panel);
+	public void addWizardPanel(int index, JWizardPanel panel);
 
 	public void addWizardPanelAfter(
-		WizardPanel panelToBePlacedAfter,
-		WizardPanel panel);
+		JWizardPanel panelToBePlacedAfter,
+		JWizardPanel panel);
 
 	public void addWizardPanelBefore(
-		WizardPanel panelToBePlacedBefore,
-		WizardPanel panel);
+		JWizardPanel panelToBePlacedBefore,
+		JWizardPanel panel);
 		
-	public void addWizardPanelAfterCurrent(WizardPanel panel);
+	public void addWizardPanelAfterCurrent(JWizardPanel panel);
 	
-	public WizardPanel removeWizardPanel(WizardPanel panel);
+	public JWizardPanel removeWizardPanel(JWizardPanel panel);
 
-	public WizardPanel removeWizardPanel(int index);
+	public JWizardPanel removeWizardPanel(int index);
 
-	public WizardPanel removeWizardPanelAfter(WizardPanel panel);
+	public JWizardPanel removeWizardPanelAfter(JWizardPanel panel);
 
-	public WizardPanel removeWizardPanelBefore(WizardPanel panel);
+	public JWizardPanel removeWizardPanelBefore(JWizardPanel panel);
 
-	public WizardPanel getWizardPanel(int index);
+	public JWizardPanel getWizardPanel(int index);
 
-	public int getIndexOfPanel(WizardPanel panel);	
+	public int getIndexOfPanel(JWizardPanel panel);	
 
 	public void updateComponents();
 
-	public WizardPanel getCurrentPanel() throws Exception;
+	public JWizardPanel getCurrentPanel() throws Exception;
 
 	public FinishAction getFinishAction();
 
@@ -104,4 +107,10 @@ public interface JWizardComponents extends JWizard {
 	
 	public boolean onLastPanel();		
 
+        public final static String CURRENT_PANEL_PROPERTY = "currentPanel";
+        
+        public void addPropertyChangeListener(PropertyChangeListener listener);
+        
+        public void removePropertyChangeListener(PropertyChangeListener listener);
+        
 }

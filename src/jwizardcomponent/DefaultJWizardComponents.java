@@ -4,6 +4,9 @@ import java.awt.CardLayout;
 import java.awt.event.ActionEvent;
 import java.util.ArrayList;
 import java.util.List;
+import java.beans.PropertyChangeEvent;
+import java.beans.PropertyChangeListener;
+import java.beans.PropertyChangeSupport;
 
 import javax.swing.JButton;
 import javax.swing.JPanel;
@@ -28,11 +31,17 @@ import javax.swing.JPanel;
  * <br>59 Temple Place, Suite 330 
  * <br>Boston, MA 02111-1307 USA</p>
  * @author William Ready
- * @version 1.0
+ * @version 1.1
+ * 
+ * Localization and Property Change Listening
+ * implemented by Piotr Kamiñski.
  */
 
 public class DefaultJWizardComponents implements JWizardComponents {
-
+    
+        private static final java.util.ResourceBundle i18n =
+                java.util.ResourceBundle.getBundle("jwizardcomponent/i18n");
+       
 	JButton backButton;
 	JButton nextButton;
 	JButton finishButton;
@@ -44,12 +53,13 @@ public class DefaultJWizardComponents implements JWizardComponents {
 	List panelList;
 	int currentIndex;
 	JPanel wizardPanelsContainer;
-	
+	PropertyChangeSupport propertyChangeListeners;
+        
 	/**
 	 * This class is the "bread and butter" of this framework.  All of these
 	 * components can be used visually however you want, as shown in the
 	 * frame and example packages, but all a developer really needs is this,
-	 * and they can even instead implement JWizardComponents and choose to do this
+	 * and they can even instead implement JWizard and choose to do this
 	 * portion any way they wish.
 	 */
 	public DefaultJWizardComponents() {
@@ -60,80 +70,80 @@ public class DefaultJWizardComponents implements JWizardComponents {
 		}
 	}
 
-	public void addWizardPanel(WizardPanel panel) {
+	public void addWizardPanel(JWizardPanel panel) {
 		getWizardPanelList().add(panel);
 		wizardPanelsContainer.add(panel,
 			getWizardPanelList().size() - 1 + "");
 	}
 
-	public void addWizardPanel(int index, WizardPanel panel) {
+	public void addWizardPanel(int index, JWizardPanel panel) {
 		getWizardPanelList().add(index, panel);
 		wizardPanelsContainer.add(panel, index + "", index);
 		if (index < getWizardPanelList().size() - 1) {
 			for (int i = index + 1; i < getWizardPanelList().size(); i++) {
 				wizardPanelsContainer.add(
-					(WizardPanel)getWizardPanelList().get(i),
+					(JWizardPanel)getWizardPanelList().get(i),
 					i + "");
 			}
 		}
 	}
 
 	public void addWizardPanelAfter(
-		WizardPanel panelToBePlacedAfter,
-		WizardPanel panel) {
+		JWizardPanel panelToBePlacedAfter,
+		JWizardPanel panel) {
 		addWizardPanel(
 			getWizardPanelList().indexOf(panelToBePlacedAfter) + 1,
 			panel);
 	}
 
 	public void addWizardPanelBefore(
-		WizardPanel panelToBePlacedBefore,
-		WizardPanel panel) {
+		JWizardPanel panelToBePlacedBefore,
+		JWizardPanel panel) {
 		addWizardPanel(
 			getWizardPanelList().indexOf(panelToBePlacedBefore) - 1,
 			panel);
 	}
 
-	public void addWizardPanelAfterCurrent(WizardPanel panel) {
+	public void addWizardPanelAfterCurrent(JWizardPanel panel) {
 		addWizardPanel(getCurrentIndex()+1, panel);
 	}
 	
-	public WizardPanel removeWizardPanel(WizardPanel panel) {
+	public JWizardPanel removeWizardPanel(JWizardPanel panel) {
 		int index = getWizardPanelList().indexOf(panel);
 		getWizardPanelList().remove(panel);
 		wizardPanelsContainer.remove(panel);
 		for (int i = index; i < getWizardPanelList().size(); i++) {
 			wizardPanelsContainer.add(
-				(WizardPanel) getWizardPanelList().get(i),
+				(JWizardPanel) getWizardPanelList().get(i),
 				i + "");
 		}
 		return panel;
 	}
 
-	public WizardPanel removeWizardPanel(int index) {
+	public JWizardPanel removeWizardPanel(int index) {
 		wizardPanelsContainer.remove(index);
-		WizardPanel panel = (WizardPanel) getWizardPanelList().remove(index);
+		JWizardPanel panel = (JWizardPanel) getWizardPanelList().remove(index);
 		for (int i = index; i < getWizardPanelList().size(); i++) {
 			wizardPanelsContainer.add(
-				(WizardPanel) getWizardPanelList().get(i),
+				(JWizardPanel) getWizardPanelList().get(i),
 				i + "");
 		}
 		return panel;
 	}
 
-	public WizardPanel removeWizardPanelAfter(WizardPanel panel) {
+	public JWizardPanel removeWizardPanelAfter(JWizardPanel panel) {
 		return removeWizardPanel(getWizardPanelList().indexOf(panel) + 1);
 	}
 
-	public WizardPanel removeWizardPanelBefore(WizardPanel panel) {
+	public JWizardPanel removeWizardPanelBefore(JWizardPanel panel) {
 		return removeWizardPanel(getWizardPanelList().indexOf(panel) - 1);
 	}
 
-	public WizardPanel getWizardPanel(int index) {
-		return (WizardPanel) getWizardPanelList().get(index);
+	public JWizardPanel getWizardPanel(int index) {
+		return (JWizardPanel) getWizardPanelList().get(index);
 	}
 
-	public int getIndexOfPanel(WizardPanel panel) {
+	public int getIndexOfPanel(JWizardPanel panel) {
 		return getWizardPanelList().indexOf(panel);
 	}
 
@@ -142,7 +152,8 @@ public class DefaultJWizardComponents implements JWizardComponents {
 	}
 
 	private void init() throws Exception {
-
+                this.propertyChangeListeners = new PropertyChangeSupport(this);
+ 
 		backButton = new JButton();
 		nextButton = new JButton();
 		finishButton = new JButton();
@@ -152,31 +163,35 @@ public class DefaultJWizardComponents implements JWizardComponents {
 		currentIndex = 0;
 		wizardPanelsContainer = new JPanel();
 
-		backButton.setText("< Back");
+		backButton.setText(i18n.getString("L_BackButton"));
+		backButton.setMnemonic(i18n.getString("L_BackButtonMnem").charAt(0)); 
 		backButton.addActionListener(new java.awt.event.ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				backButton_actionPerformed(e);
 			}
 		});
 
-		nextButton.setText("Next >");
-		nextButton.addActionListener(new java.awt.event.ActionListener() {
+		nextButton.setText(i18n.getString("L_NextButton"));
+		nextButton.setMnemonic(i18n.getString("L_NextButtonMnem").charAt(0));
+                nextButton.addActionListener(new java.awt.event.ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				nextButton_actionPerformed(e);
 			}
 		});
 
-		cancelButton.setText("Cancel");
-		cancelButton.addActionListener(new java.awt.event.ActionListener() {
+		cancelButton.setText(i18n.getString("L_CancelButton"));
+		cancelButton.setMnemonic(i18n.getString("L_CancelButtonMnem").charAt(0));
+                cancelButton.addActionListener(new java.awt.event.ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				getCancelAction().performAction();
+				cancelButton_actionPerformed(e);
 			}
 		});
 
-		finishButton.setText("Finish ");
-		finishButton.addActionListener(new java.awt.event.ActionListener() {
+		finishButton.setText(i18n.getString("L_FinishButton"));
+		finishButton.setMnemonic(i18n.getString("L_FinishButtonMnem").charAt(0));
+                finishButton.addActionListener(new java.awt.event.ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				getFinishAction().performAction();
+				finishButton_actionPerformed(e);
 			}
 		});
 
@@ -184,10 +199,14 @@ public class DefaultJWizardComponents implements JWizardComponents {
 	}
 
 	void cancelButton_actionPerformed(ActionEvent e) {
-		cancelAction.performAction();
+		getCancelAction().performAction();
 	}
-
-	void nextButton_actionPerformed(ActionEvent e) {
+        
+        void finishButton_actionPerformed(ActionEvent e) {
+		getFinishAction().performAction();
+	}
+	
+        void nextButton_actionPerformed(ActionEvent e) {
 		try {
 			getCurrentPanel().next();
 		} catch (Exception ex) {
@@ -203,9 +222,9 @@ public class DefaultJWizardComponents implements JWizardComponents {
 		}
 	}
 
-	public WizardPanel getCurrentPanel() throws Exception {
+	public JWizardPanel getCurrentPanel() throws Exception {
 		if (getWizardPanelList().get(currentIndex) != null) {
-			return (WizardPanel) getWizardPanelList().get(currentIndex);
+			return (JWizardPanel) getWizardPanelList().get(currentIndex);
 		} else {
 			throw new Exception("No panels in panelList");
 		}
@@ -229,7 +248,13 @@ public class DefaultJWizardComponents implements JWizardComponents {
 				finishButton.setEnabled(false);
 				nextButton.setEnabled(true);
 			}
+                        // let panel to update itself
+                        getCurrentPanel().update();
 
+                        // inform PropertyChangeListeners
+                        PropertyChangeEvent event = new PropertyChangeEvent(this, CURRENT_PANEL_PROPERTY
+                        , null,  getCurrentPanel());
+                        propertyChangeListeners.firePropertyChange(event);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -313,4 +338,12 @@ public class DefaultJWizardComponents implements JWizardComponents {
 		this.panelList = panelList;		
 	}
 
+        public void addPropertyChangeListener(PropertyChangeListener listener) {
+            propertyChangeListeners.addPropertyChangeListener(listener);
+        }
+         
+        public void removePropertyChangeListener(PropertyChangeListener listener) {
+            propertyChangeListeners.removePropertyChangeListener(listener);
+        }
+        
 }

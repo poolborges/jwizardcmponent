@@ -25,9 +25,9 @@ package jwizardcomponent;
 
 public abstract class CancelAction implements Action {
 
-  DefaultJWizardComponents wizardComponents;
+  JWizardComponents wizardComponents;
 
-  public CancelAction(DefaultJWizardComponents wizardComponents) {
+  public CancelAction(JWizardComponents wizardComponents) {
     this.wizardComponents = wizardComponents;
   }
 

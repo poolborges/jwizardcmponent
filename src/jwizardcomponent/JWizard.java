@@ -31,14 +31,14 @@ public interface JWizard {
 
   public void setWizardPanelList(List panelList);
 
-  public void addWizardPanel(WizardPanel panel);
+  public void addWizardPanel(JWizardPanel panel);
 
-  public void addWizardPanel(int index, WizardPanel panel);
+  public void addWizardPanel(int index, JWizardPanel panel);
 
-  public WizardPanel removeWizardPanel(WizardPanel panel);
+  public JWizardPanel removeWizardPanel(JWizardPanel panel);
 
-  public WizardPanel removeWizardPanel(int index);
+  public JWizardPanel removeWizardPanel(int index);
 
-  public WizardPanel getWizardPanel(int index);
+  public JWizardPanel getWizardPanel(int index);
 
 }

@@ -8,7 +8,7 @@ import javax.swing.JLabel;
 import javax.swing.SwingUtilities;
 
 import jwizardcomponent.JWizardComponents;
-import jwizardcomponent.WizardPanel;
+import jwizardcomponent.JWizardPanel;
 
 /**
  * <p>Title: JWizardComponent</p>
@@ -33,7 +33,7 @@ import jwizardcomponent.WizardPanel;
  * @version 1.0
  */
 
-public class SimpleLabelWizardPanel extends WizardPanel {
+public class SimpleLabelWizardPanel extends JWizardPanel {
 
   public SimpleLabelWizardPanel(JWizardComponents wizardComponents, JLabel label) {
     super(wizardComponents);

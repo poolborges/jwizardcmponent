@@ -11,7 +11,7 @@ import javax.swing.JLabel;
 import javax.swing.SwingUtilities;
 
 import jwizardcomponent.JWizardComponents;
-import jwizardcomponent.WizardPanel;
+import jwizardcomponent.JWizardPanel;
 
 /**
  * <p>Title: JWizardComponent</p>
@@ -36,7 +36,7 @@ import jwizardcomponent.WizardPanel;
  * @version 1.0
  */
 
-public class SimpleDynamicWizardPanel extends WizardPanel {
+public class SimpleDynamicWizardPanel extends JWizardPanel {
 
   /**
    * Note:  Although this says Simple, it is much easier to add the Panels
@@ -48,9 +48,9 @@ public class SimpleDynamicWizardPanel extends WizardPanel {
   JCheckBox screen4CheckBox;
   JCheckBox screen5CheckBox;
 
-  WizardPanel screen3Panel;
-  WizardPanel screen4Panel;
-  WizardPanel screen5Panel;
+  JWizardPanel screen3Panel;
+  JWizardPanel screen4Panel;
+  JWizardPanel screen5Panel;
 
   public SimpleDynamicWizardPanel(JWizardComponents wizardComponents) {
     super(wizardComponents);
