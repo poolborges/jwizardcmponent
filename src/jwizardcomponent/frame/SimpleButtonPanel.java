@@ -7,7 +7,7 @@ import java.awt.Insets;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
-import jwizardcomponent.DefaultJWizardComponents;
+import jwizardcomponent.JWizardComponents;
 
 /**
  * <p>Title: JWizardComponent</p>
@@ -36,7 +36,7 @@ public class SimpleButtonPanel extends JPanel {
 
   JLabel statusLabel = new JLabel();
 
-  public SimpleButtonPanel(DefaultJWizardComponents wizardComponents) {
+  public SimpleButtonPanel(JWizardComponents wizardComponents) {
     this.setLayout(new GridBagLayout());
     this.add(statusLabel,  new GridBagConstraints(0, 0, 1, 1, 0.7, 0.0
             ,GridBagConstraints.WEST, GridBagConstraints.BOTH, new Insets(2, 0, 2, 0), 0, 0));
