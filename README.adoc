@@ -1,0 +1,61 @@
+= JWizardComponent
+
+
+.About
+----
+Java Swing Wizard Component designed to be traveled through using Next, Back, Finish, Cancel. Supports internationalization. I did searches for a similar framework and only found proprietary solutions that were not as robust as desired.
+----
+
+
+.License
+----
+GNU Library or Lesser General Public License version 2.0 (LGPLv2)
+----
+
+
+== Origin Source 
+
+
+Site 
+
+* http://jwizardcmponent.sourceforge.net/
+* https://sourceforge.net/projects/jwizardcmponent/
+
+
+=== Authors & Contributors
+
+* William Ready
+* Piotr Kamiński
+
+
+=== Migration 
+
+
+.How was imported from sourceforge cvs
+----
+rsync -av rsync://a.cvs.sourceforge.net/cvsroot/jwizardcmponent/\* cvs
+
+mkdir `pwd`/cvs2git-tmp
+
+
+cvs2git --blobfile=cvs2git-tmp/blob.dat --dumpfile=cvs2git-tmp/dump.dat \
+    --username=w_ready99 --default-eol=native \
+    --encoding=utf8 --encoding=latin1 --fallback-encoding=ascii \
+    `pwd`/cvs/JWizardComponent
+    
+mkdir `pwd`/jwizardcomponent_git
+git init `pwd`/jwizardcomponent_git
+cd `pwd`/jwizardcomponent_git
+
+cat ../cvs2git-tmp/blob.dat ../cvs2git-tmp/dump.dat | git fast-import 
+
+
+git remote add origin https://github.com/poolborges/jwizardcmponent.git
+git config remote.origin.push HEAD
+git push -u origin master
+
+
+git tag -a v1.2.2 -m "Version 1.2.2 release 2004-02-17" 
+git push origin --tags
+----
+
