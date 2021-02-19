@@ -34,7 +34,7 @@ import javax.swing.JPanel;
  * @version 1.1
  * 
  * Localization and Property Change Listening
- * implemented by Piotr Kamiñski.
+ * implemented by Piotr KamiÅ„ski.
  */
 
 public class DefaultJWizardComponents implements JWizardComponents {

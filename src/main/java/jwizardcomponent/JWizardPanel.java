@@ -24,7 +24,7 @@ import javax.swing.JPanel;
  * @author William Ready
  * @version 1.1
  * 
- * Minor modifications made by Piotr Kamiñski.
+ * Minor modifications made by Piotr KamiÅ„ski.
  */
 
 public abstract class JWizardPanel extends JPanel {

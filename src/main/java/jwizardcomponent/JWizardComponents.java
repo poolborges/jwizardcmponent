@@ -35,7 +35,7 @@ import javax.swing.JPanel;
  * @author William Ready
  * @version 1.1
  * 
- * Property Change Listening implemented by Piotr Kamiñski.
+ * Property Change Listening implemented by Piotr KamiÅ„ski.
  */
 public interface JWizardComponents extends JWizard {
 

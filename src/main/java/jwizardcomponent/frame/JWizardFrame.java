@@ -42,7 +42,7 @@ import jwizardcomponent.JWizardPanel;
  * <br>write to:  The Free Software Foundation, Inc.,
  * <br>59 Temple Place, Suite 330
  * <br>Boston, MA 02111-1307 USA</p>
- * @author Piotr Kamiñski
+ * @author Piotr KamiÅ„ski
  * @version 1.0
  */
 

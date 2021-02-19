@@ -40,8 +40,7 @@ public class SimpleDynamicLogoJWizard {
   public static void main(String [] args) {
     try {
     	
-    	LOGO =
-			new ImageIcon(DefaultJWizardComponents.class.getResource("images/logo.jpeg"));
+    	LOGO = new ImageIcon("/images/logo.jpeg");
 
       SimpleLogoJWizardFrame wizardFrame = new SimpleLogoJWizardFrame(
           LOGO);

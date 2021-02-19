@@ -1,0 +1,92 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>io.github.poolborges.jwizardcmponent</groupId>
+    <artifactId>jwizardcmponent</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <packaging>jar</packaging>
+    
+    <name>JWizardComponent</name>
+    <url>https://github.com/poolborges/jwizardcmponent</url>
+    <description>
+        Swing-Based Wizard Framework for Wizards.
+        Current Site https://github.com/poolborges/jwizardcmponent
+        Original source from http://jwizardcmponent.sourceforge.net/
+    </description>
+    <inceptionYear>2003</inceptionYear>
+
+    <licenses>
+        <license>
+            <name>GNU Library General Public License, version 2.0</name>
+            <url>https://www.gnu.org/licenses/old-licenses/lgpl-2.0.html</url>
+        </license>
+    </licenses>
+    
+    <developers>
+        <developer>
+            <id>w_ready99</id>
+            <name>William Ready</name>
+            <url>http://jwizardcmponent.sourceforge.net/</url>
+        </developer>
+        
+        <developer>
+            <id>Piotr</id>
+            <name>Piotr Kamiński</name>
+            <url>http://jwizardcmponent.sourceforge.net/</url>
+        </developer>
+        <developer>
+            <id>poolborges</id>
+            <name>Paulo Borges</name>
+            <email>poolborges[at]gmail.com</email>
+            <url>https://github.com/poolborges</url>
+        </developer>
+    </developers>
+    
+    <issueManagement>
+        <url>https://github.com/poolborges/jwizardcmponent/issues</url>
+        <system>GitHub Issues</system>
+    </issueManagement>
+    
+    <scm>
+        <url>https://github.com/poolborges/jwizardcmponent</url>
+        <connection>scm:git:git://github.com/poolborges/jwizardcmponent</connection>
+        <developerConnection>scm:git:git@github.com:poolborges/jwizardcmponent.git</developerConnection>
+    </scm>
+
+    <properties>
+        <project.compiler.source>1.6</project.compiler.source>
+        <project.compiler.target>1.6</project.compiler.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+
+    <build>
+        
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.5.1</version>
+                <configuration>
+                    <source>${project.compiler.source}</source>
+                    <target>${project.compiler.target}</target>
+                    <encoding>${project.build.sourceEncoding}</encoding>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-javadoc-plugin</artifactId>
+                <version>3.2.0</version>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-resources-plugin</artifactId>
+                <version>2.4.3</version>
+                <configuration>
+                    <encoding>${project.build.sourceEncoding}</encoding>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>

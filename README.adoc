@@ -28,7 +28,7 @@ Site
 
 === Authors & Contributors
 
-* William Ready
+* William Ready; w_ready99; http://willready.isa-geek.net
 * Piotr Kamiński
 
 
