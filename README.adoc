@@ -1,4 +1,28 @@
+// Global settings
+:ascii-ids:
+:encoding: UTF-8
+:lang: pt_PT
+:icons: font
+:toc:
+:toc-placement!:
+:toclevels: 3
+:numbered:
+:stem:
+
+ifdef::env-github[]
+:imagesdir: https://raw.githubusercontent.com/poolborges/jwizardcmponent/master/docs/images/
+:tip-caption: :bulb:
+:note-caption: :information_source:
+:important-caption: :heavy_exclamation_mark:
+:caution-caption: :fire:
+:warning-caption: :warning:
+endif::[]
+
 = JWizardComponent
+:author: Copyright (c) 2020-2020 Paulo Borges.
+:revnumber: jwizardcmponent-1.0.0-snapshot
+:revdate: {last-update-label} {docdatetime}
+:version-label!:
 
 Documentation 
 
@@ -15,6 +39,10 @@ Java Swing Wizard Component designed to be traveled through using Next, Back, Fi
 ----
 GNU Library or Lesser General Public License version 2.0 (LGPLv2)
 ----
+
+== Screenshots 
+
+image::jwizardcmponent-screenshot.gif[]
 
 
 == Origin Source 
