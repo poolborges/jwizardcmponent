@@ -37,11 +37,6 @@ jobs:
     #  env:
     #    GITHUB_TOKEN: ${{ github.token }}
 
-    - name: Upload artifact
-      uses: actions/upload-artifact@v4
-      with:
-        name: jwizardcmponent
-        path: "target/*.jar"
     - name: Release Binary
       uses: "marvinpinto/action-automatic-releases@latest"
       with:
